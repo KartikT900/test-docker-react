@@ -1,10 +1,12 @@
-FROM node:alpine as buildPhase
+#build phase
+FROM node:alpine
 WORKDIR '/app'
-COPY package.json .
+COPY package*.json ./
 RUN npm install
 COPY . .
 RUN npm run build
 
+# deploy phase
 FROM nginx
 # exposing port 80 from the docker container. EBS looks
 # at this 'expose' variable and will automatically do the port mapping. This is not equivalent to
