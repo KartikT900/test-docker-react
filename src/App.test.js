@@ -7,3 +7,8 @@ test('renders learn react link', () => {
   const linkElement = getByText(/learn react/i);
   expect(linkElement).toBeInTheDocument();
 });
+
+test('renders edit text', () => {
+  const { getByText } = render(<App />);
+  expect(getByText('src/App.js')).toBeInTheDocument();
+});
