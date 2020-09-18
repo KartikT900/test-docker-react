@@ -3,7 +3,7 @@ language: generic
 sudo: required
 services: 
   - docker
-# commands executed before running test/deploy  
+# commands executed before running tests/deploy  
 before_install:
   - docker build -t ktk001/docker-react-test -f Dockerfile.dev . # command to run docker similar to how you run the same in local. -t is to tag the generated image
 
