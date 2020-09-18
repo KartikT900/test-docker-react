@@ -5,7 +5,7 @@ services:
   - docker
 # commands executed before running test/deploy  
 before_install:
-  - docker build -t ktk001/docker-react-test npm run test -f Dockerfile.dev . # command to run docker similar to how you run the same in local. -t is to tag the generated image
+  - docker build -t ktk001/docker-react-test npm run test -f Dockerfile.dev .
 
 script:
   - docker run -e CI=true ktk001/docker-react-test npm run test
